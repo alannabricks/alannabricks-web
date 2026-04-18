@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.env*.local
+.DS_Store
+
+# Internal consulting docs — kept locally only, not pushed to public repo
+doc/

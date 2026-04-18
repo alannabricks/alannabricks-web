@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand — from logo: warm brick-red #E8412E */
+  --color-brand:      232 65 46;
+  --color-brand-fg:   255 255 255;
+  --color-brand-dark: 175 40 23;
+  --color-accent:     12 184 164;
+
+  /* Neutral surface (light mode) */
+  --color-bg:        255 255 255;
+  --color-fg:         15 15 17;
+  --color-muted:      90 95 105;
+  --color-border:    229 231 235;
+  --color-surface:   249 250 251;
+  --color-surface-2: 243 244 246;
+
+  --font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-display: 'Space Grotesk', var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-fg antialiased;
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.container-x {
+  @apply mx-auto max-w-container px-6;
+}
+
+/* Brand gradient used in hero + featured case */
+.bg-brand-radial {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 0%, rgba(var(--color-brand) / 0.18), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 100% 100%, rgba(var(--color-brand) / 0.12), transparent 60%);
+}
+
+.brick-grid {
+  background-image:
+    linear-gradient(to right, rgba(var(--color-border) / 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--color-border) / 0.6) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid rgb(var(--color-brand));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
